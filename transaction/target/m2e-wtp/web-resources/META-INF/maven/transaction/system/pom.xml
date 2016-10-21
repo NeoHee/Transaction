@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>transaction</groupId>
+  <artifactId>system</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>system Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.4.1.RELEASE</version>
+  </parent>
+  
+  <dependencies>
+    
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <!-- 去掉tomcat的依赖 -->
+        <exclusions>
+	      <exclusion>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-tomcat</artifactId>
+	      </exclusion>
+    	</exclusions>
+    </dependency>
+  
+  <!-- 增加jetty -->  
+  <dependency>
+   		<groupId>org.springframework.boot</groupId>
+    	<artifactId>spring-boot-starter-jetty</artifactId>
+  </dependency>
+    
+  </dependencies>
+  
+  
+  <build>
+    <finalName>system</finalName>
+    <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+    </plugins>
+  </build>
+</project>
